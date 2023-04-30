@@ -9,17 +9,25 @@ function Login() {
 
   const [data, setData] = useContext(UserContext);
 
-  const [file, setFile] = useState();
-  function handleChange(e) {
-    console.log(e.target.files);
-    setFile(URL.createObjectURL(e.target.files[0]));
-    setData((prev) => {
-      return {
+  const handleInputChange = (event) => {
+    const { value } = event.target;
+    setData((prev) => ({
+      ...prev,
+      name: value,
+    }));
+  };
+
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.onload = () => {
+      setData((prev) => ({
         ...prev,
-        image: file,
-      };
-    });
-  }
+        image: reader.result,
+      }));
+    };
+    reader.readAsDataURL(file);
+  };
 
   return (
     <div className="h-full flex bg-black">
@@ -44,7 +52,7 @@ function Login() {
         </label>
         <input
           type="file"
-          onChange={handleChange}
+          onChange={handleImageChange}
           id="img-upload"
           className="hidden"
         />
@@ -54,14 +62,7 @@ function Login() {
         </label>
         <input
           id="name"
-          onChange={(e) => {
-            setData((prev) => {
-              return {
-                ...prev,
-                name: e.target.value,
-              };
-            });
-          }}
+          onChange={handleInputChange}
           className="mb-[76px] w-[487px] p-[22px] bg-[#E6EBFF]"
           placeholder="your name"
           type="text"

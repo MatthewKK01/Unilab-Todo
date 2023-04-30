@@ -7,7 +7,7 @@ export const UserContext = createContext();
 export const UserProvider = ({ children }) => {
   const [data, setData] = useState({
     name: "your name",
-    image: "",
+    image: null,
   });
 
   return (

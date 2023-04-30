@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useContext } from "react";
 import { UserContext } from "../context/UserProvider";
-
+import { useEffect } from "react";
 function Header() {
   const [data, setData] = useContext(UserContext);
 
