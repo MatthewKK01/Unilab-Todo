@@ -5,13 +5,16 @@ import { useEffect } from "react";
 function Header() {
   const [data, setData] = useContext(UserContext);
 
+  const user = JSON.parse(sessionStorage.getItem("user"));
+  console.log(user);
+
   return (
     <header className="flex justify-between items-center mb-[35px] bg-black py-6 px-7">
       <h1 className="text-white font-black text-4xl">TODO</h1>
       <article className="flex flex-row items-center gap-5">
-        <p className="  text-white font-light text-[22px]">{data.name}</p>
+        <p className="  text-white font-light text-[22px]">{user.name}</p>
         <img
-          src={data.image}
+          src={user.image}
           className="w-[68px] h-[68px] rounded-full"
           alt="photo"
         />

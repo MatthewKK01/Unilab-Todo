@@ -29,6 +29,11 @@ function Login() {
     reader.readAsDataURL(file);
   };
 
+  const changeHandler = () => {
+    sessionStorage.setItem("user", JSON.stringify(data));
+    navigate("/todolist");
+  };
+
   return (
     <div className="h-full flex bg-black">
       <div className="w-[588px] flex flex-col items-center justify-center m-auto  h-[688px] bg-white rounded-[4px]">
@@ -69,7 +74,7 @@ function Login() {
         />
 
         <button
-          onClick={() => navigate("/todolist")}
+          onClick={changeHandler}
           className="capitalize w-[388px] h-[98px] text-black font-light  text-5xl rounded-[4px] pt-4 px-[58px] bg-[#5EFC8D] hover:bg-black hover:text-white"
         >
           sign in
