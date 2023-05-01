@@ -5,7 +5,7 @@ import { useEffect } from "react";
 function Header() {
   const [data, setData] = useContext(UserContext);
 
-  const user = JSON.parse(sessionStorage.getItem("user"));
+  const user = JSON.parse(localStorage.getItem("user"));
   console.log(user);
 
   return (

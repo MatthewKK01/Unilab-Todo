@@ -30,7 +30,7 @@ function Login() {
   };
 
   const changeHandler = () => {
-    sessionStorage.setItem("user", JSON.stringify(data));
+    localStorage.setItem("user", JSON.stringify(data));
     navigate("/todolist");
   };
 
