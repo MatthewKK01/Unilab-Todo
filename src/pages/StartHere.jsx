@@ -58,12 +58,12 @@ function StartHere() {
           </text>
         </g>
       </svg>
-      <h1 className="text-white font-semibold mt-[46px] mb-[149px] text-[54px] capitalize">
+      <h1 className="text-white  font-semibold md:mt-[46px] md:mb-[149px] lg:text-[54px] capitalize sm:text-center sm:text-3xl sm:mt-16 sm:mb-24">
         Keep Track Of Daily Tasks In Life
       </h1>
       <button
         onClick={() => navigate("/login")}
-        className="capitalize w-[388px] h-[98px] text-black font-light  text-5xl rounded-[4px] pt-4 px-[58px] bg-[#5EFC8D] hover:bg-white"
+        className="sm:w-72  sm:text-3xl sm:pt-2 capitalize md:w-[388px] h-[98px] text-black font-light  md:text-5xl rounded-[4px] md:pt-4 md:px-[58px] bg-[#5EFC8D] hover:bg-white"
       >
         get started
       </button>

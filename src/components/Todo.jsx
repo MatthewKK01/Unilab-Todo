@@ -7,7 +7,7 @@ export default function Todo({ todo, deleteTodo, completeTodo }) {
       key={todo.id}
       className={`${
         todo.completed ? `bg-gray-300` : `bg-black`
-      } mb-4 pr-[11.7px] pl-6 py-[11.5px] h-[54px] w-[595px] flex justify-between items-center`}
+      } mb-4 pr-[11.7px] pl-6 py-[11.5px] sm:w-5/6 sm:h-14 md:h-[54px] md:w-[595px] flex justify-between items-center`}
     >
       <p className={`${todo.completed && `line-through`} text-white`}>
         {todo.task}

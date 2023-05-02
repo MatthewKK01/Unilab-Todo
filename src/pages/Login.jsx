@@ -36,11 +36,15 @@ function Login() {
 
   return (
     <div className="h-full flex bg-black">
-      <div className="w-[588px] flex flex-col items-center justify-center m-auto  h-[688px] bg-white rounded-[4px]">
+      <div className="md:w-[588px] sm:w-[350px] flex flex-col items-center justify-center m-auto  h-[688px] bg-white rounded-[4px]">
         <h1 className="text-5xl capitalize font-semibold mb-11">get started</h1>
         <p className="mb-[10px]">add a photo</p>
         <label className="mb-[53px]" htmlFor="img-upload">
-          <div className="bg-[#E6EBFF] flex items-center justify-center w-[122px] h-[122px] cursor-pointer rounded-full hover:bg-[#5EFC8D]">
+          <div
+            className="bg-[#E6EBFF]
+             flex items-center justify-center w-[122px] h-[122px]
+          cursor-pointer rounded-full hover:bg-[#5EFC8D]"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="44.3"
@@ -68,14 +72,18 @@ function Login() {
         <input
           id="name"
           onChange={handleInputChange}
-          className="mb-[76px] w-[487px] p-[22px] bg-[#E6EBFF]"
+          className="mb-[76px] md:w-[487px]  md:p-[22px] bg-[#E6EBFF] sm:w-[300px] sm:p-4"
           placeholder="your name"
           type="text"
         />
 
         <button
           onClick={changeHandler}
-          className="capitalize w-[388px] h-[98px] text-black font-light  text-5xl rounded-[4px] pt-4 px-[58px] bg-[#5EFC8D] hover:bg-black hover:text-white"
+          className="capitalize md:w-[388px] md:h-[98px]
+           text-black font-light sm:text-3xl md:text-5xl rounded-[4px]
+            md:pt-4 sm:pt-2 px-[58px] bg-[#5EFC8D]
+            sm:w-[270px] sm:h-[78px]
+            hover:bg-black hover:text-white"
         >
           sign in
         </button>

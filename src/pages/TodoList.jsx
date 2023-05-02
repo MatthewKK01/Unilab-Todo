@@ -37,13 +37,13 @@ function TodoList() {
     <div>
       <Header />
       <div className="flex flex-col justify-center items-center">
-        <h1 className="capitalize mb-[27px] text-black font-semibold text-[42px]">
+        <h1 className="capitalize md:mb-[27px] text-black font-semibold sm:text-3xl md:text-[42px] sm:mb-20">
           add your daily tasks
         </h1>
-        <div className="w-[595px] mb-[76px] flex items-center ">
+        <div className="md:w-[595px] sm:w-5/6 sm:h-14 sm:mb-10 sm:m-auto md:mb-[76px] flex items-center ">
           <input
             id="name"
-            className="focus:outline-none h-[76px] w-[487px] rounded-r-none rounded-[4px] p-[22px] bg-[#E6EBFF]"
+            className="focus:outline-none md:h-[76px] sm:w-full sm:h-full md:w-[487px] rounded-r-none rounded-[4px] md:p-[22px] bg-[#E6EBFF]"
             placeholder="my task"
             value={taskName}
             type="text"
@@ -53,7 +53,7 @@ function TodoList() {
           />
           <button
             onClick={submitHandler}
-            className="bg-[#5EFC8D] w-[108px] rounded-[4px] font-light text-[32px] rounded-l-none py-4 px-[22px] h-[76px]"
+            className="bg-[#5EFC8D] md:w-[108px] sm:h-full sm:w-10 rounded-[4px] font-light md:text-[32px] rounded-l-none md:py-4 md:px-[22px] md:h-[76px]"
           >
             Add
           </button>
