@@ -1,11 +1,16 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import Todo from "../components/Todo";
 
 function TodoList() {
   const [todos, setTodos] = useState([]);
   const [taskName, setTaskName] = useState("");
+
+  useEffect(() => {
+    const storedTodos = JSON.parse(localStorage.getItem("todo")) || [];
+    setTodos(storedTodos);
+  }, []);
 
   const submitHandler = () => {
     setTodos((prev) => [
@@ -16,6 +21,7 @@ function TodoList() {
         completed: false,
       },
     ]);
+    localStorage.setItem("todo", JSON.stringify(todos));
     setTaskName("");
   };
 
@@ -23,14 +29,15 @@ function TodoList() {
     const newList = todos.filter((todo) => todo.id !== id);
 
     setTodos(newList);
+    localStorage.setItem("todo", JSON.stringify(newList));
   };
 
   const completeTodo = (id) => {
-    setTodos(
-      todos.map((todo) =>
-        todo.id === id ? { ...todo, completed: !todo.completed } : todo
-      )
+    const updatedTodos = todos.map((todo) =>
+      todo.id === id ? { ...todo, completed: !todo.completed } : todo
     );
+    setTodos(updatedTodos);
+    localStorage.setItem("todo", JSON.stringify(updatedTodos));
   };
 
   return (
